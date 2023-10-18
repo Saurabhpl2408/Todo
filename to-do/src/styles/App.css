@@ -1,0 +1,25 @@
+:root {
+  --primary-color: #3498db;
+  --button-size: 60px;
+  /* Add more CSS variables as needed */
+}
+
+.App {
+  text-align: center;
+}
+
+.add-task-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: var(--button-size);
+  width: var(--button-size);
+  height: var(--button-size);
+  cursor: pointer;
+}
+
+/* Add more global styles here */

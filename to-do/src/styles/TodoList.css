@@ -1,0 +1,23 @@
+.todo-list {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column for mobile by default */
+  
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr); /* 3 columns for tablet */
+    }
+  
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, 1fr); /* 4 columns for desktop */
+    }
+  
+    .task {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 10px;
+      background: teal;
+      text-align: center;
+    }
+  
+    
+  }
+  
