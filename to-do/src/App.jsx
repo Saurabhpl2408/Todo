@@ -1,5 +1,5 @@
 import  { useState } from 'react';
-// import './styles/App.css';
+import './styles/App.css';
 import AddTaskPopup from './AddTaskPopup';
 import TodoList from './TodoList';
 import PinnedCarousel from './PinnedCarousel';
@@ -31,9 +31,10 @@ function App() {
   return (
 <div className="App">
       <h1>My To-Do App</h1>
+      <PinnedCarousel pinnedTasks={pinnedTasks} />
       <button className="add-task-button" onClick={() => setShowPopup(true)}>+</button>
       <TodoList tasks={tasks} onUpdateTasks={handleUpdateTasks} />
-      <PinnedCarousel pinnedTasks={pinnedTasks} />
+      
       {showPopup && <AddTaskPopup onAddTask={handleAddTask} />}
     </div>
   );

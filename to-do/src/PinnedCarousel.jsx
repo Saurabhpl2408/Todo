@@ -8,7 +8,7 @@ function PinnedTaskCarousel({ pinnedTasks }) {
     const [currentSlide, setCurrentSlide] = useState(0);
   
     useEffect(() => {
-      // Ensure the current slide stays within bounds when the number of pinned tasks changes
+      
       if (currentSlide >= (pinnedTasks ? pinnedTasks.length : 0)) {
         setCurrentSlide((pinnedTasks ? pinnedTasks.length : 0) - 1);
       }
@@ -26,9 +26,9 @@ function PinnedTaskCarousel({ pinnedTasks }) {
       }
     }
   
-    if (!pinnedTasks || !pinnedTasks.length) {
-      return <div className="pinned-task-carousel">No pinned tasks available.</div>;
-    }
+    // if (!pinnedTasks || pinnedTasks.length) {
+    //   return <div className="pinned-task-carousel">No pinned tasks available.</div>;
+    // }
   
     return (
       <div className="pinned-task-carousel">
