@@ -1,7 +1,7 @@
 :root {
   --primary-color: #3498db;
   --button-size: 60px;
-  /* Add more CSS variables as needed */
+  
 }
 
 .App {
@@ -10,16 +10,24 @@
 
 .add-task-button {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: var(--primary-color);
-  color: #fff;
+  bottom: 20px; 
+  right: 20px; 
+  background-color: #0077FF;
+  color: white;
+  padding: 10px;
   border: none;
-  border-radius: 50%;
-  font-size: var(--button-size);
-  width: var(--button-size);
-  height: var(--button-size);
+  border-radius: 50%; 
   cursor: pointer;
+  font-size: 24px; 
+  /* z-index: 1001;  */
 }
 
-/* Add more global styles here */
+@media (max-width: 768px) {
+  
+  .add-task-button {
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+
