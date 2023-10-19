@@ -39,7 +39,7 @@ function TodoList() {
       setEditTask(null);
       setSavedTasks(updatedTasks);
     };
-  
+    
     return (
       <div className="todo-list">
         {savedTasks.map((task, index) => (
