@@ -1,21 +1,20 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 // import './styles/AddTaskPopup.css';
-import './styles/AddTaskPopup.css'
+import "./styles/AddTaskPopup.css";
 
 function AddTaskPopup({ onAddTask }) {
-  const [taskName, setTaskName] = useState('');
-  const [taskDate, setTaskDate] = useState('');
-  const [priority, setPriority] = useState('Low');
+  const [taskName, setTaskName] = useState("");
+  const [taskDate, setTaskDate] = useState("");
+  const [priority, setPriority] = useState("Low");
   const [isRepetitive, setIsRepetitive] = useState(false);
-  const [taskImage, setTaskImage] = useState('');
+  const [taskImage, setTaskImage] = useState("");
   const [isPinned, setIsPinned] = useState(false);
 
   const handleCloseModal = () => {
     onAddTask(false);
   };
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,44 +25,43 @@ function AddTaskPopup({ onAddTask }) {
       priority,
       isRepetitive,
       image: taskImage,
-      pinned:isPinned
+      pinned: isPinned,
+      id: Date.now(),
     };
-    const savedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
     savedTasks.push(task);
-    localStorage.setItem('tasks', JSON.stringify(savedTasks));
+    localStorage.setItem("tasks", JSON.stringify(savedTasks));
     onAddTask(task);
 
     // Idhar reset kiya fields ko
-    setTaskName('');
-    setTaskDate('');
-    setPriority('Low');
+    setTaskName("");
+    setTaskDate("");
+    setPriority("Low");
     setIsRepetitive(false);
-    setTaskImage('');
+    setTaskImage("");
     setIsPinned(false);
-
   };
 
   useEffect(() => {
-      
     const handleOutsideClick = (e) => {
-      if (e.target.classList.contains('popup')) {
+      if (e.target.classList.contains("popup")) {
         handleCloseModal();
       }
     };
 
-    
-    document.addEventListener('click', handleOutsideClick);
-
+    document.addEventListener("click", handleOutsideClick);
 
     return () => {
-      document.removeEventListener('click', handleOutsideClick);
+      document.removeEventListener("click", handleOutsideClick);
     };
   }, []);
 
   return (
     <div className="popup">
       <div className="popup-content">
-        <span className="close" onClick={handleCloseModal}>&times;</span>
+        <span className="close" onClick={handleCloseModal}>
+          &times;
+        </span>
         <h2>Add Task</h2>
         <form onSubmit={handleSubmit}>
           <label>
@@ -86,7 +84,10 @@ function AddTaskPopup({ onAddTask }) {
           </label>
           <label>
             Priority:
-            <select value={priority} onChange={(e) => setPriority(e.target.value)}>
+            <select
+              value={priority}
+              onChange={(e) => setPriority(e.target.value)}
+            >
               <option value="Low">Low</option>
               <option value="Medium">Medium</option>
               <option value="High">High</option>
@@ -105,7 +106,9 @@ function AddTaskPopup({ onAddTask }) {
             <input
               type="file"
               accept="image/*"
-              onChange={(e) => setTaskImage(URL.createObjectURL(e.target.files[0]))}
+              onChange={(e) =>
+                setTaskImage(URL.createObjectURL(e.target.files[0]))
+              }
             />
           </label>
           <button type="submit">Add Task </button>
