@@ -14,8 +14,45 @@
       border: 1px solid #ccc;
       padding: 10px;
       margin: 10px;
-      background: teal;
+      background: #6c757d;
       text-align: center;
+    }
+
+    .task h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .task p {
+      font-size: 16px;
+      margin: 5px 0;
+    }
+  
+  
+    .task .task-img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .task-controls {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 10px;
+    }
+  
+    .task-controls button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #0077FF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+  
+    .task-controls button:hover {
+      background: #0055CC;
     }
   
     
