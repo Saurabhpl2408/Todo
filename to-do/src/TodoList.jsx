@@ -69,7 +69,7 @@ function TodoList() {
               <p>Date: {task.date}</p>
               <p>Priority: {task.priority}</p>
               <p>Repetitive: {task.isRepetitive ? "Yes" : "No"}</p>
-              {task.image && <img src={task.image} alt="Task" />}
+              {task.image && <img src={task.image}  className="task-img"alt="Task" />}
               <div className="task-controls">
                 <button onClick={() => handleEdit(task)}>Edit</button>
                 <button onClick={() => handleDelete(task)}>Delete</button>

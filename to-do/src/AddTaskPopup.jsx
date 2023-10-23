@@ -40,6 +40,8 @@ function AddTaskPopup({ onAddTask }) {
     setIsRepetitive(false);
     setTaskImage("");
     setIsPinned(false);
+
+    handleCloseModal();
   };
 
   useEffect(() => {
